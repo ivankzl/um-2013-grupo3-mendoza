@@ -1,0 +1,20 @@
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
+         version="2.0">
+<persistence-unit name="Twitt" transaction-type="RESOURCE_LOCAL">
+  <provider>org.hibernate.ejb.HibernatePersistence</provider>
+  <mapping-file>META-INF/orm.xml</mapping-file>
+  <class>ar.edu.um.entidad.Mensaje</class>
+  <class>ar.edu.um.entidad.Tema</class>
+  <class>ar.edu.um.entidad.TipoMensaje</class>
+  <class>ar.edu.um.entidad.Usuario</class>
+  <properties>
+  	<property name="hibernate.show_sql" value="true" />         
+    <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect" />         
+    <property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver" />         
+    <property name="hibernate.connection.username" value="root" />                  
+    <property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/canario" /> 
+  </properties>
+  </persistence-unit>
+</persistence>

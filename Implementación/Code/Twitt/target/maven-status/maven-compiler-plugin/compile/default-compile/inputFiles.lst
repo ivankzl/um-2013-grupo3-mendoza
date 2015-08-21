@@ -1,0 +1,16 @@
+/home/ivan/Documents/workspace-sts-3.7.0.RELEASE/um-2013-grupo3-mendoza/Implementación/Code/Twitt/src/ar/edu/um/dao/base/DaoBase.java
+/home/ivan/Documents/workspace-sts-3.7.0.RELEASE/um-2013-grupo3-mendoza/Implementación/Code/Twitt/src/ar/edu/um/entidad/Mensaje.java
+/home/ivan/Documents/workspace-sts-3.7.0.RELEASE/um-2013-grupo3-mendoza/Implementación/Code/Twitt/src/ar/edu/um/dominio/MensajeDominio.java
+/home/ivan/Documents/workspace-sts-3.7.0.RELEASE/um-2013-grupo3-mendoza/Implementación/Code/Twitt/src/ar/edu/um/dominio/UsuarioDominio.java
+/home/ivan/Documents/workspace-sts-3.7.0.RELEASE/um-2013-grupo3-mendoza/Implementación/Code/Twitt/src/ar/edu/um/dao/TemaDao.java
+/home/ivan/Documents/workspace-sts-3.7.0.RELEASE/um-2013-grupo3-mendoza/Implementación/Code/Twitt/src/ar/edu/um/dao/TipoUsuarioDao.java
+/home/ivan/Documents/workspace-sts-3.7.0.RELEASE/um-2013-grupo3-mendoza/Implementación/Code/Twitt/src/ar/edu/um/dominio/TemaDominio.java
+/home/ivan/Documents/workspace-sts-3.7.0.RELEASE/um-2013-grupo3-mendoza/Implementación/Code/Twitt/src/ar/edu/um/entidad/Usuario.java
+/home/ivan/Documents/workspace-sts-3.7.0.RELEASE/um-2013-grupo3-mendoza/Implementación/Code/Twitt/src/ar/edu/um/util/PersistenceUtil.java
+/home/ivan/Documents/workspace-sts-3.7.0.RELEASE/um-2013-grupo3-mendoza/Implementación/Code/Twitt/src/ar/edu/um/entidad/Tema.java
+/home/ivan/Documents/workspace-sts-3.7.0.RELEASE/um-2013-grupo3-mendoza/Implementación/Code/Twitt/src/ar/edu/um/dao/UsuarioDao.java
+/home/ivan/Documents/workspace-sts-3.7.0.RELEASE/um-2013-grupo3-mendoza/Implementación/Code/Twitt/src/Main.java
+/home/ivan/Documents/workspace-sts-3.7.0.RELEASE/um-2013-grupo3-mendoza/Implementación/Code/Twitt/src/ar/edu/um/dao/TipoMensajeDao.java
+/home/ivan/Documents/workspace-sts-3.7.0.RELEASE/um-2013-grupo3-mendoza/Implementación/Code/Twitt/src/ar/edu/um/entidad/TipoUsuario.java
+/home/ivan/Documents/workspace-sts-3.7.0.RELEASE/um-2013-grupo3-mendoza/Implementación/Code/Twitt/src/ar/edu/um/dao/MensajeDao.java
+/home/ivan/Documents/workspace-sts-3.7.0.RELEASE/um-2013-grupo3-mendoza/Implementación/Code/Twitt/src/ar/edu/um/entidad/TipoMensaje.java

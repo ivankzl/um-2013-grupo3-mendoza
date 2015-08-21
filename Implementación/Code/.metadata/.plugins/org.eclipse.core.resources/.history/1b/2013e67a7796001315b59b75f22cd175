@@ -1,0 +1,63 @@
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.HashSet;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+import javax.xml.ws.Endpoint;
+
+import ar.edu.um.dao.MensajeDao;
+import ar.edu.um.dao.TemaDao;
+import ar.edu.um.dao.TipoMensajeDao;
+import ar.edu.um.dao.TipoUsuarioDao;
+import ar.edu.um.dao.UsuarioDao;
+import ar.edu.um.dominio.UsuarioDominio;
+import ar.edu.um.entidad.Mensaje;
+import ar.edu.um.entidad.Tema;
+import ar.edu.um.entidad.TipoMensaje;
+import ar.edu.um.entidad.TipoUsuario;
+import ar.edu.um.entidad.Usuario;
+
+
+public class Main {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		
+	    EntityManagerFactory emf = Persistence.createEntityManagerFactory("Twitt");
+	    EntityManager em = emf.createEntityManager();
+	    Mensaje mensaje = new Mensaje();
+	    mensaje.setFechaPublicacion(new Date());
+	    mensaje.setMensaje("Este es el primer mensaje con temas sin mencionados");
+	    
+	    TemaDao temaDao = new TemaDao(em);
+	    HashSet<Tema> temaMensajes = new HashSet<Tema>();
+	    temaMensajes.add(temaDao.findById(1));
+	    temaMensajes.add(temaDao.findById(2));
+	    mensaje.setTemaMensajes(temaMensajes);
+	    
+	    TipoMensajeDao tipoMensajeDAO = new TipoMensajeDao(em);
+	    TipoMensaje tipoMensaje = tipoMensajeDAO.findById(1);
+	    mensaje.setTipoMensaje(tipoMensaje);
+	    
+	    UsuarioDao usuDao = new UsuarioDao(em);
+	    Usuario usuario = usuDao.findById(1);
+	    mensaje.setUsuario(usuario); 
+	    	    
+	    /*MensajeDao mensajeDao = new MensajeDao(em);
+	    Mensaje mensajenew = mensajeDao.findById(5);
+	    System.out.println("Mensaje" + mensajenew.getMensaje());
+	    System.out.println("Tema 1" + mensajenew.getTemaMensajes().iterator().next().getNombre());
+	    System.out.println("Usuario 1" + mensajenew.getUsuariosMencionadosMensajes().iterator().next().getNombre());
+	    */
+	    
+	    Endpoint.publish("http://localhost:9898/HelloWeb", new MensajeDominio());
+	    
+        System.out.println("HelloWeb service is ready");
+	    
+	}
+
+}

@@ -1,0 +1,42 @@
+package ar.edu.um.dominio;
+
+import java.util.List;
+
+import ar.edu.um.entidad.Mensaje;
+import ar.edu.um.entidad.Usuario;
+
+public class MensajeDominio {
+	
+	public void publicarMensaje(Mensaje mensaje){
+		
+	}
+	
+	public void republicarMensaje(Mensaje mensaje){
+		
+	}
+	
+	public void modificarMensaje (Mensaje mensaje){
+		
+	}
+	
+	public void eliminarMensaje(Mensaje mensaje){
+		
+	}
+	
+	public List<Mensaje> visualizarTablon(Usuario usuario){
+		
+	}
+	
+	public List<Mensaje> visualizarMenciones(Usuario usuario){
+		
+	}
+	
+	public List<Mensaje> verMensajesPrivados(Usuario usuario){
+		
+	}
+	
+	public void enviarMensajePrivado(Mensaje mensaje){
+		
+	}
+
+}

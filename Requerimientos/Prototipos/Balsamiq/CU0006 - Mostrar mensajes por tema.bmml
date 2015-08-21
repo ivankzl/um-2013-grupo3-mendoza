@@ -1,0 +1,63 @@
+<mockup version="1.0" skin="sketch" fontFace="Balsamiq Sans" measuredW="612" measuredH="429" mockupW="489" mockupH="341">
+  <controls>
+    <control controlID="1" controlTypeID="com.balsamiq.mockups::List" x="123" y="88" w="489" h="53" measuredW="100" measuredH="126" zOrder="0" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%23Tema</text>
+      </controlProperties>
+    </control>
+    <control controlID="2" controlTypeID="com.balsamiq.mockups::Button" x="527" y="156" w="71" h="29" measuredW="64" measuredH="27" zOrder="1" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Buscar</text>
+      </controlProperties>
+    </control>
+    <control controlID="4" controlTypeID="com.balsamiq.mockups::TabBar" x="123" y="188" w="489" h="241" measuredW="430" measuredH="100" zOrder="2" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Tabl%F3n%2C%20Seguidores%20y%20Seguidos%2C%20Mensajes%20Privados%2C%20Cuenta</text>
+      </controlProperties>
+    </control>
+    <control controlID="5" controlTypeID="com.balsamiq.mockups::Label" x="197" y="231" w="127" h="21" measuredW="117" measuredH="21" zOrder="3" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Mensaje%201%20%20%20%23Tema</text>
+      </controlProperties>
+    </control>
+    <control controlID="6" controlTypeID="com.balsamiq.mockups::Button" x="375" y="228" w="-1" h="-1" measuredW="83" measuredH="27" zOrder="4" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Republicar</text>
+      </controlProperties>
+    </control>
+    <control controlID="7" controlTypeID="com.balsamiq.mockups::Button" x="473" y="228" w="135" h="27" measuredW="107" measuredH="27" zOrder="5" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Seguir%20Usuario</text>
+      </controlProperties>
+    </control>
+    <control controlID="8" controlTypeID="com.balsamiq.mockups::HRule" x="123" y="288" w="489" h="-1" measuredW="100" measuredH="10" zOrder="6" locked="false" isInGroup="-1"/>
+    <control controlID="10" controlTypeID="com.balsamiq.mockups::Button" x="375" y="298" w="-1" h="-1" measuredW="83" measuredH="27" zOrder="7" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Republicar</text>
+      </controlProperties>
+    </control>
+    <control controlID="12" controlTypeID="com.balsamiq.mockups::Button" x="473" y="298" w="135" h="27" measuredW="107" measuredH="27" zOrder="8" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Seguir%20Usuario</text>
+      </controlProperties>
+    </control>
+    <control controlID="13" controlTypeID="com.balsamiq.mockups::HRule" x="123" y="369" w="489" h="-1" measuredW="100" measuredH="10" zOrder="9" locked="false" isInGroup="-1"/>
+    <control controlID="14" controlTypeID="com.balsamiq.mockups::Label" x="197" y="304" w="127" h="21" measuredW="120" measuredH="21" zOrder="10" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Mensaje%202%20%20%20%23Tema</text>
+      </controlProperties>
+    </control>
+    <control controlID="15" controlTypeID="com.balsamiq.mockups::Icon" x="134" y="220" w="-1" h="-1" measuredW="48" measuredH="48" zOrder="11" locked="false" isInGroup="-1"/>
+    <control controlID="16" controlTypeID="com.balsamiq.mockups::Label" x="134" y="265" w="-1" h="-1" measuredW="54" measuredH="21" zOrder="12" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Usuario1</text>
+      </controlProperties>
+    </control>
+    <control controlID="17" controlTypeID="com.balsamiq.mockups::Icon" x="134" y="298" w="-1" h="-1" measuredW="48" measuredH="48" zOrder="13" locked="false" isInGroup="-1"/>
+    <control controlID="18" controlTypeID="com.balsamiq.mockups::Label" x="134" y="346" w="-1" h="-1" measuredW="56" measuredH="21" zOrder="14" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Usuario2</text>
+      </controlProperties>
+    </control>
+  </controls>
+</mockup>

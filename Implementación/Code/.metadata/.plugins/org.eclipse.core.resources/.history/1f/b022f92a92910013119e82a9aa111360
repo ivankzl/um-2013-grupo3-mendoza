@@ -1,0 +1,89 @@
+/**
+ * $Author:  $
+ * 
+ * Revision History
+ * $Log: MensajeDominio.java,v $
+ *
+ *
+ */
+package ar.edu.um.dominio;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import ar.edu.um.dao.MensajeDao;
+import ar.edu.um.entidad.Mensaje;
+import ar.edu.um.entidad.Tema;
+import ar.edu.um.entidad.Usuario;
+import ar.edu.um.util.PersistenceUtil;
+
+public class MensajeDominio {
+	
+	public void publicarMensaje(Mensaje mensaje){
+		MensajeDao mensajeDao = new MensajeDao(PersistenceUtil.getEntityManager());
+		mensajeDao.persist(mensaje);
+	}
+	
+	public void republicarMensaje(Mensaje mensaje, Usuario usuarioRepublicante){
+		MensajeDao mensajeDao = new MensajeDao(PersistenceUtil.getEntityManager());
+		mensajeDao.persist(mensaje);
+	}
+	
+	public void modificarMensaje (Mensaje mensaje){
+		MensajeDao mensajeDao = new MensajeDao(PersistenceUtil.getEntityManager());
+		mensajeDao.merge(mensaje);
+	}
+	
+	public void eliminarMensaje(Mensaje mensaje){
+		MensajeDao mensajeDao = new MensajeDao(PersistenceUtil.getEntityManager());
+		mensajeDao.remove(mensaje);
+	}
+	
+	public List<Mensaje> visualizarTablon(Usuario usuario){
+		ArrayList<Mensaje> mensajes = null;
+		MensajeDao mensajeDao = new MensajeDao(PersistenceUtil.getEntityManager());
+		
+		return mensajes;
+	}
+	
+	public List<Mensaje> visualizarMenciones(Usuario usuario){
+		ArrayList<Mensaje> mensajes = null;
+		MensajeDao mensajeDao = new MensajeDao(PersistenceUtil.getEntityManager());
+		
+		return mensajes;
+	}
+	
+	public List<Mensaje> verMensajesPrivados(Usuario usuario){
+		ArrayList<Mensaje> mensajes = null;
+		MensajeDao mensajeDao = new MensajeDao(PersistenceUtil.getEntityManager());
+		
+		return mensajes;
+	}
+	
+	public void enviarMensajePrivado(Mensaje mensaje){
+		MensajeDao mensajeDao = new MensajeDao(PersistenceUtil.getEntityManager());
+		mensajeDao.persist(mensaje);
+	}
+	
+	public List<Mensaje> buscarMensajePorTema(Tema tema){
+		ArrayList<Mensaje> mensajes = null;
+		MensajeDao mensajeDao = new MensajeDao(PersistenceUtil.getEntityManager());
+		
+		return mensajes;
+	}
+	
+    public List<Mensaje> buscarMensajePorUsuario(Usuario usuario){
+		ArrayList<Mensaje> mensajes = null;
+		MensajeDao mensajeDao = new MensajeDao(PersistenceUtil.getEntityManager());
+		
+		return mensajes;
+	}
+    
+    public List<Mensaje> buscarMensajePorLink(String link){
+		ArrayList<Mensaje> mensajes = null;
+		MensajeDao mensajeDao = new MensajeDao(PersistenceUtil.getEntityManager());
+		
+		return mensajes;
+	}
+
+}

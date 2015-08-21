@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Feb 2, 2014 7:21:27 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="ar.edu.um.entidad.Mensaje" table="mensaje" catalog="canario">
+        <id name="idMensaje" type="int">
+            <column name="idMensaje" />
+            <generator class="increment" />
+        </id>
+        <many-to-one name="usuario" class="ar.edu.um.entidad.Usuario" fetch="select">
+            <column name="usuario" not-null="true" />
+        </many-to-one>
+        <many-to-one name="tipoMensaje" class="ar.edu.um.entidad.TipoMensaje" fetch="select">
+            <column name="tipoMensaje" not-null="true" />
+        </many-to-one>
+        <many-to-one name="usuarioDestinatario" class="ar.edu.um.entidad.Usuario" fetch="select">
+            <column name="usuarioDestinatario" not-null="false" />
+        </many-to-one>
+        <property name="fechaPublicacion" type="timestamp">
+            <column name="fechaPublicacion" length="19" not-null="true" />
+        </property>
+        <property name="mensaje" type="string">
+            <column name="mensaje" length="150" not-null="true" />
+        </property>
+        <set name="temaMensajes" table="temaMensaje" inverse="false" lazy="false" fetch="select" cascade="all">
+            <key>
+                <column name="mensaje" not-null="true" />
+            </key>
+            <many-to-many class="ar.edu.um.entidad.Tema">
+            	<column name="tema" not-null="true" />
+            </many-to-many>
+        </set>
+        <set name="usuariosMencionadosMensajes" table="usuariosMencionadosMensaje" inverse="false" lazy="false" fetch="select" cascade="all">
+            <key>
+                <column name="mensaje" not-null="true" />
+            </key>
+            <many-to-many class="ar.edu.um.entidad.Usuario">
+            	<column name="usuario" not-null="true" />
+            </many-to-many>
+        </set>
+    </class>
+    
+    <query name="Mensaje.mostrarMensajesTablon">
+		<![CDATA[Select m from Mensaje m  left join m.usuariosMencionadosMensajes u where m.usuario.idusuario = :idUsuario or u.idusuario = :idUsuario]]>
+	</query>
+	
+	<query name="Mensaje.visualizarMenciones">
+		<![CDATA[Select m from Mensaje m  left join m.usuariosMencionadosMensajes u where u.idusuario = :idUsuario]]>
+	</query>
+	
+	<query name="Mensaje.verMensajesPrivados">
+		<![CDATA[Select m from Mensaje m  where m.usuarioDestinatario.idusuario = :idUsuario]]>
+	</query>
+	
+	<query name="Mensaje.buscarMensajePorTema">
+		<![CDATA[Select m from Mensaje m left join m.temaMensajes t where t.nombre = :tema]]>
+	</query>
+	
+	<query name="Mensaje.buscarMensajePorUsuario">
+		<![CDATA[Select m from Mensaje m where m.usuario.idusuario = :idUsuario]]>
+	</query>
+</hibernate-mapping>

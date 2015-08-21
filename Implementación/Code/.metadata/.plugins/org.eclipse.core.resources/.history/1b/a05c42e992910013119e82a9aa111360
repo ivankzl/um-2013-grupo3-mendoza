@@ -1,0 +1,73 @@
+/**
+ * $Author:  $
+ * 
+ * Revision History
+ * $Log: MensajeDominio.java,v $ *
+ *
+ */
+package ar.edu.um.dominio;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import ar.edu.um.dao.UsuarioDao;
+import ar.edu.um.entidad.Usuario;
+import ar.edu.um.util.PersistenceUtil;
+
+/**
+ * UsuarioDominio ofrece los métodos para manejar usuarios
+ * 
+ * $Id: $
+ * 
+ */
+public class UsuarioDominio {
+	public void crearUsuario(Usuario usuario){
+		UsuarioDao usuarioDao = new UsuarioDao(PersistenceUtil.getEntityManager());
+		usuarioDao.persist(usuario);
+	}
+	
+	public Usuario verUsuario(Integer id){
+		Usuario usuario = null;
+		UsuarioDao usuarioDao = new UsuarioDao(PersistenceUtil.getEntityManager());
+		usuarioDao.findById(id);
+		return usuario;
+	}
+	
+	public void modificarUsuario(Usuario usuario){
+		UsuarioDao usuarioDao = new UsuarioDao(PersistenceUtil.getEntityManager());
+		usuarioDao.merge(usuario);		
+	}
+	
+	public void eliminarUsuario (Usuario usuario){
+		UsuarioDao usuarioDao = new UsuarioDao(PersistenceUtil.getEntityManager());
+		usuarioDao.remove(usuario);
+	}
+	
+	public List<Usuario> consultarSeguidores(Usuario usuario){
+		ArrayList<Usuario> seguidores = null;
+		UsuarioDao usuarioDao = new UsuarioDao(PersistenceUtil.getEntityManager());
+		
+		return seguidores;
+	}
+	
+	public List<Usuario> consultarSeguidos(Usuario usuario){
+		ArrayList<Usuario> seguidos = null;
+		UsuarioDao usuarioDao = new UsuarioDao(PersistenceUtil.getEntityManager());
+		
+		return seguidos;
+	}
+	
+	public Usuario buscarUsuarioPorNombre(String name){
+		Usuario usuario = null;
+		
+		return usuario;
+	}
+	
+	public void dejarDeSeguirUsuario(Usuario usuarioActual, Usuario usuarioDejarDeSeguir){
+		
+	}
+
+	public void cerrarSesion(){
+		
+	}
+}

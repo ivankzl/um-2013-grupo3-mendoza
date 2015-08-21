@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Feb 2, 2014 7:21:27 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="ar.edu.um.entidad.Mensaje" table="mensaje" catalog="canario">
+        <id name="idMensaje" type="int">
+            <column name="idMensaje" />
+            <generator class="increment" />
+        </id>
+        <many-to-one name="usuario" class="ar.edu.um.entidad.Usuario" fetch="select">
+            <column name="usuario" not-null="true" />
+        </many-to-one>
+        <many-to-one name="tipoMensaje" class="ar.edu.um.entidad.TipoMensaje" fetch="select">
+            <column name="tipoMensaje" not-null="true" />
+        </many-to-one>
+        <many-to-one name="usuarioDestinatario" class="ar.edu.um.entidad.Usuario" fetch="select">
+            <column name="usuarioDestinatario" not-null="false" />
+        </many-to-one>
+        <property name="fechaPublicacion" type="timestamp">
+            <column name="fechaPublicacion" length="19" not-null="true" />
+        </property>
+        <property name="mensaje" type="string">
+            <column name="mensaje" length="150" not-null="true" />
+        </property>
+        <set name="temaMensajes" table="temaMensaje" inverse="true" lazy="false" fetch="select">
+            <key>
+                <column name="mensaje" not-null="true" />
+            </key>
+            <one-to-many class="ar.edu.um.entidad.Tema" />
+        </set>
+        <set name="usuariosMencionadosMensajes" table="usuariosMencionadosMensaje" inverse="true" lazy="false" fetch="select">
+            <key>
+                <column name="mensaje" not-null="true" />
+            </key>
+            <one-to-many class="ar.edu.um.entidad.Usuario" />
+        </set>
+    </class>
+</hibernate-mapping>

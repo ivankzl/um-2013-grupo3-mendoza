@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Feb 2, 2014 7:21:27 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="ar.edu.um.entidad.Usuario" table="usuario" catalog="canario">
+        <id name="idusuario" type="int">
+            <column name="idusuario" />
+            <generator class="increment" />
+        </id>
+        <many-to-one name="tipoUsuario" class="ar.edu.um.entidad.TipoUsuario" fetch="select">
+            <column name="tipoUsuario" not-null="true" />
+        </many-to-one>
+        <property name="nombreUsuario" type="string">
+            <column name="nombreUsuario" length="45" not-null="true" />
+        </property>
+        <property name="nombre" type="string">
+            <column name="nombre" length="100" not-null="true" />
+        </property>
+        <property name="apellido" type="string">
+            <column name="apellido" length="100" not-null="true" />
+        </property>
+        <property name="clave" type="string">
+            <column name="clave" length="45" not-null="true" />
+        </property>
+        <property name="foto" type="string">
+            <column name="foto" length="45" />
+        </property>
+        <property name="mail" type="string">
+            <column name="mail" length="100" not-null="true" />
+        </property>
+        <property name="descripcion" type="string">
+            <column name="descripcion" />
+        </property>
+        <set name="usuariosSeguidos" table="usuariosSeguidos" inverse="false" lazy="false" fetch="select" cascade="all">
+            <key>
+                <column name="usuarioSeguidor" not-null="true" />
+            </key>
+            <many-to-many class="ar.edu.um.entidad.Usuario">
+            	<column name="usuarioSeguido" not-null="true" />
+            </many-to-many>
+        </set>
+        <set name="usuariosSeguidores" table="usuariosSeguidos" inverse="false" lazy="false" fetch="select" cascade="none">
+            <key>
+                <column name="usuarioSeguido" not-null="true" />
+            </key>
+            <many-to-many class="ar.edu.um.entidad.Usuario">
+            	<column name="usuarioSeguidor" not-null="true" />
+            </many-to-many>
+        </set>
+    </class>
+    
+    <query name="Usuario.loguearUsuario">
+		<![CDATA[Select u from Usuario u where u.nombreUsuario = :nombreUsuario and u.clave = :clave]]> 
+	</query>
+	
+	<query name="Usuario.buscarUsuarioPorNombre">
+		<![CDATA[Select u from Usuario u where u.nombreUsuario = :nombreUsuario]]> 
+	</query>
+</hibernate-mapping>

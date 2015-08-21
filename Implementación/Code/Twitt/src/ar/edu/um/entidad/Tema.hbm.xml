@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Feb 2, 2014 7:21:27 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="ar.edu.um.entidad.Tema" table="tema" catalog="canario">
+        <id name="idTema" type="int">
+            <column name="idTema" />
+            <generator class="assigned" />
+        </id>
+        <property name="nombre" type="string">
+            <column name="nombre" length="100" not-null="true" />
+        </property>
+    </class>
+    
+    <query name="Tema.mostrarTemasDelMomento">
+		<![CDATA[Select t from Tema t where idTema < 10 order by t.idTema ]]>
+	</query>
+    
+    <query name="Tema.buscarTemaPorFechas">
+		<![CDATA[Select t from Tema t]]>
+	</query>
+</hibernate-mapping>
